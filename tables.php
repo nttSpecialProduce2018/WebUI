@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <script src="js/jquery-3.3.1.min.js"></script>
+
   <title>U.S.A.</title>
-  <script type="text/javascript" src="main.js"></script>
-  
+
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <style type="text/css">
   .bs-component + .bs-component {
@@ -48,9 +47,9 @@
 </head>
 <body>
 
-
-
 <!--header部分-->
+
+
 <header>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -73,7 +72,7 @@
               Live demo
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="./tables.php">Tables Page</a>
+              <a class="dropdown-item" href="./tables.html">Tables Page</a>
               <a class="dropdown-item" href="./convenience.html">Convenience Store</a>
             </div>
           </li>
@@ -82,7 +81,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="./tables.php">Tables</a>
+            <a class="nav-link" href="tables.html">Tables</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://github.com/nttSpecialProduce2018/WebUI/wiki">Wiki</a>
@@ -94,79 +93,67 @@
 </header>
 
 
-<!--header部分-->
-
-
 <div class="container">
-
-  <div class="page-header" id="banner">
-    <div class="row my-4">
-      <div class="col-12"><br><br>
-        <h1 class="display-3"><center><img src="image/usa.png" width="400" height="150" class="d-inline-block align-top mr-1" alt="us"></center></h1>
-        <p class="lead"><center>U.S.A. is one of the most convenient tool in the world!!!</center></p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Button
-  ================================================== -->
-  <section class="bs-docs-section">
-    <div class="page-header">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1 id="buttons"></h1>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-12">
-
-        <p class="bs-component">
-          <center>
-          <button type="button" class="btn btn-outline-primary">
-          <h2><img src="image/convenience_store_24.png" width="35" height="35" class="d-inline-block align-top mr-1" alt="U.S.A.">Convenience Store</button></h2>
-          
-          <a href="tables.php">
-          <button type="button" class="btn btn-outline-warning">
-          
-          <h2><img src="image/learning.jpg" width="40" height="40" class="d-inline-block align-top mr-1" alt="U.S.A.">Knowledge Table</h2></button></a>
-          </center>
-        </p>
-
-        </p>
-
-
-
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- Buttons
-  <!-- Typography
-  ================================================== -->
-    <!-- Headings -->
-    <!-- Blockquotes -->
 
   <!-- Tables
   ================================================== -->
-  <!-- Forms
-  ================================================== -->
-  <!-- Navs
-  ================================================== -->
+  <section class="bs-docs-section">
 
-  <!-- Indicators
-  ================================================== -->
-  <!-- Progress bars
-  ================================================== -->
-  <!-- Containers
-  ================================================== -->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header">
+          <h1 id="tables">Tables</h1>
+        </div>
 
-  <!-- Dialogs
-  ================================================== -->
+        <div class="bs-component">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Word</th>
+                <th scope="col">knowledge</th>
+              </tr>
+            </thead>
 
+              <tr class="table-primary">
+                <td>password</td>
+                <td>admin</td>
+              </tr>
+
+              <tr class="table-active">
+                <td>ID</td>
+              <td>Okinawa</td>
+              </tr>
+              <tr class="table-success">
+                <td>path</td>
+                <td>/usr/local/bin</td>
+              </tr>
+              <?php
+              
+              $filepath = 'knowledge.csv';
+              
+              $file = new SplFileObject($filepath);
+              
+              $file->setFlags(SplFileObject::READ_CSV);
+              
+              foreach ($file as $line) {
+                
+                $cnt = count($line);
+                    echo '<tr class="table-primary">';
+                      for($i = 0; $i < $cnt; $i++){
+                        $data = explode(",",$line[$i]);
+                        $cnt_data = count($data);
+                        for($j = 0; $j < $cnt_data; $j++){
+                        echo '<td>'.$data[$j].'</td>';
+                        }
+                      }
+                    echo '</tr>';
+              }
+               ?>
+ 
+          </table>
+        </div>
+      </div>
+    </div>
 </div>
 
 
