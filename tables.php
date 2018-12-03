@@ -48,8 +48,6 @@
 <body>
 
 <!--header部分-->
-
-
 <header>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -72,7 +70,7 @@
               Live demo
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="./tables.html">Tables Page</a>
+              <a class="dropdown-item" href="./tables.php">Tables Page</a>
               <a class="dropdown-item" href="./convenience.html">Convenience Store</a>
             </div>
           </li>
@@ -81,7 +79,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="tables.html">Tables</a>
+            <a class="nav-link" href="./tables.php">Tables</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://github.com/nttSpecialProduce2018/WebUI/wiki">Wiki</a>
@@ -93,11 +91,11 @@
 </header>
 
 
+
 <div class="container">
 
   <!-- Tables
   ================================================== -->
-  <section class="bs-docs-section">
 
     <div class="row">
       <div class="col-lg-12">
@@ -114,19 +112,6 @@
               </tr>
             </thead>
 
-              <tr class="table-primary">
-                <td>password</td>
-                <td>admin</td>
-              </tr>
-
-              <tr class="table-active">
-                <td>ID</td>
-              <td>Okinawa</td>
-              </tr>
-              <tr class="table-success">
-                <td>path</td>
-                <td>/usr/local/bin</td>
-              </tr>
               <?php
               
               $filepath = 'knowledge.csv';
