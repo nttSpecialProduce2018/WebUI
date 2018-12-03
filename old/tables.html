@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <script src="js/jquery-3.3.1.min.js"></script>
+
   <title>U.S.A.</title>
-  <script type="text/javascript" src="main.js"></script>
-  
+
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <style type="text/css">
   .bs-component + .bs-component {
@@ -48,9 +47,9 @@
 </head>
 <body>
 
-
-
 <!--header部分-->
+
+
 <header>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -73,16 +72,16 @@
               Live demo
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="./tables.php">Tables Page</a>
-              <a class="dropdown-item" href="./tyousei.php">Monitering</a>
+              <a class="dropdown-item" href="./tables.html">Tables Page</a>
+              <a class="dropdown-item" href="./convenience.html">Convenience Store</a>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./tyousei.php">Monitering</a>
+            <a class="nav-link" href="convenience.html">Convenience Store</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="./tables.php">Tables</a>
+            <a class="nav-link" href="tables.html">Tables</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://github.com/nttSpecialProduce2018/WebUI/wiki">Wiki</a>
@@ -94,80 +93,76 @@
 </header>
 
 
-<!--header部分-->
-
-
 <div class="container">
-
-  <div class="page-header" id="banner">
-    <div class="row my-4">
-      <div class="col-12"><br><br>
-        <h1 class="display-3"><center><img src="image/usa.png" width="400" height="150" class="d-inline-block align-top mr-1" alt="us"></center></h1>
-        <p class="lead"><center>U.S.A. is one of the most convenient tool in the world!!!</center></p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Button
-  ================================================== -->
-  <section class="bs-docs-section">
-    <div class="page-header">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1 id="buttons"></h1>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-12">
-
-        <p class="bs-component">
-          <center>
-          <a href="tyousei.php">
-          <button type="button" class="btn btn-outline-primary">
-          <h2><img src="image/rinban.jpeg" width="73" height="35" class="d-inline-block align-top mr-1" alt="U.S.A.">Monitering</button></h2>
-          
-          <a href="tables.php">
-          <button type="button" class="btn btn-outline-warning">
-          
-          <h2><img src="image/learning.jpg" width="40" height="40" class="d-inline-block align-top mr-1" alt="U.S.A.">Knowledge Table</h2></button></a>
-          </center>
-        </p>
-
-        </p>
-
-
-
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- Buttons
-  <!-- Typography
-  ================================================== -->
-    <!-- Headings -->
-    <!-- Blockquotes -->
 
   <!-- Tables
   ================================================== -->
-  <!-- Forms
-  ================================================== -->
-  <!-- Navs
-  ================================================== -->
+  <section class="bs-docs-section">
 
-  <!-- Indicators
-  ================================================== -->
-  <!-- Progress bars
-  ================================================== -->
-  <!-- Containers
-  ================================================== -->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header">
+          <h1 id="tables">Tables</h1>
+        </div>
 
-  <!-- Dialogs
-  ================================================== -->
+        <div class="bs-component">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Applications</th>
+                <th scope="col">Sender</th>
+                <th scope="col">Receiver</th>
+                <th scope="col">knowledge</th>
+              </tr>
+            </thead>
 
+              <tr class="table-primary">
+                <th scope="col">
+                  <img src="image/twitter.png" width="30" height="30" class="d-inline-block align-top mr-1" alt="twitter">
+                </th>
+                <td>Michel</td>
+                <td>Tom</td>
+                <td>ここはこうしたほうがいいよ</td>
+              </tr>
+
+              <tr class="table-active">
+                <th scope="col">
+                  <img src="image/slack.png" width="30" height="30" class="d-inline-block align-top mr-1" alt="slack">
+                </th>
+                <td>Goto</td>
+                <td>Noto</td>
+                <td>このサービスはこうしたほうがいいよ</td>
+              </tr>
+              <tr class="table-success">
+                <th scope="row">
+                  <img src="image/line.jpg" width="30" height="30" class="d-inline-block align-top mr-1" alt="line">
+                </th>
+                <td>Ishii</td>
+                <td>Noto</td>
+                <td>ここはこうしたほうがいいよ</td>
+              </tr>
+              <?php
+              
+              $filepath = 'test.csv';
+              
+              $file = new SplFileObject($filepath);
+              
+              $file->setFlags(SplFileObject::READ_CSV);
+              
+              foreach ($file as $line) {
+              
+                $cnt = count($line);
+                    echo '<tr>';
+                      for($i = 0; $i < $cnt; $i++){
+                            echo '<td>'.$line[$i].'</td>';
+                      }
+                    echo '</tr>';
+               }
+               ?>
+          </table>
+        </div>
+      </div>
+    </div>
 </div>
 
 
